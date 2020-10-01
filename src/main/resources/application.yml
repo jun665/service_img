@@ -1,0 +1,19 @@
+server: #服务端口号
+  port: 9091
+
+spring:
+  application:
+    name: img-service #服务名
+  datasource: #数据库配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm?allowMultiQueries=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+
+#eureka配置
+eureka:
+  client:
+    service-url: #配置注册中心地址
+      defaultZone: http://localhost:8081/eureka/ #8081为Eureka端口
+  instance:
+    prefer-ip-address: true #使用ip地址注册(可选)
